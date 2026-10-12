@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include "main.hpp"
 
 using namespace std;
 
@@ -14,11 +15,22 @@ int main()
     string monPrenom;
     cout<< "Quel est ton prénom ?: "<< endl;
     getline (cin, monPrenom);
+    cout << "Enchanté, " << monPrenom << endl;
     
-    int age(0);
-    cout<<"Bien, et tu as quel age ? : " << endl;
-    cin >> age;
-    cout << "Enchanté, tu es donc " << monPrenom << " et tu es agé de " << age << " ans. Maintenant, choisis un nombre " << endl ;
+    int age;
+    do
+    {
+        cout<<"Tu as quel age ? : " << endl;
+        cin >> age;
+        
+        if (age > 0 and age <= 105)
+            cout << "Enchanté, tu es donc " << monPrenom << " et tu es agé de " << age << " ans. Maintenant, choisis un nombre " << endl;
+        else
+        {
+            cout<< "Tape un âge cohérent" <<endl;
+        }
+    }while(age < 0 or age > 105);
+    
    
     int a;
     cin>>a;
@@ -32,7 +44,3 @@ int main()
 
     return 0;
 }
-
-
-
-
